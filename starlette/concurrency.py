@@ -55,5 +55,6 @@ async def iterate_in_threadpool(
     while True:
         try:
             yield await anyio.to_thread.run_sync(_next, iterator)
+            return
         except _StopIteration:
             break
