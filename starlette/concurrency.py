@@ -44,7 +44,7 @@ def _next(iterator: typing.Iterator[T]) -> T:
     # and catch it outside that context, so we coerce them into a different
     # exception type.
     try:
-        return next(iterator)
+        return next(iter(iterator))
     except StopIteration:
         raise _StopIteration
 
